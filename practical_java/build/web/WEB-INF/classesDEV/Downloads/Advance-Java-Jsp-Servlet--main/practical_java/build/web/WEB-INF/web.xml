@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>calculate</servlet-name>
+        <servlet-class>calculate</servlet-class>
+    </servlet>
+     <welcome-file-list>
+        <welcome-file>pro1.html</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <servlet-name>pro2</servlet-name>
+        <servlet-class>pro2</servlet-class>
+        <init-param>
+            <param-name>databaseUrl</param-name> 
+            <param-value>jdbc:mysql://localhost:3306/mca1</param-value>
+        </init-param>
+        <init-param>
+            <param-name>user</param-name>
+            <param-value>root</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>123</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>calculate</servlet-name>
+        <url-pattern>/calculate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>pro2</servlet-name>
+        <url-pattern>/pro2</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
