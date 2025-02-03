@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Registration form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="pro3.css">
+    </head>
+    <body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="#" method="POST" id="registrationForm">
+
+            <!-- First Name -->
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required maxlength="10" minlength="3" pattern="[A-Za-z]+" placeholder="Enter your first name" />
+            <label style="color:red;display:none" id="name_arror" >please enter first character capital..</label>
+            
+            <!-- Last Name -->
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required maxlength="10"  minlength="3" pattern="[A-Za-z]+" placeholder="Enter your last name" />
+            <label style="color:red;display:none" id="lname_arror" >please enter first character capital..</label>
+            
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required minlength="5" placeholder="Enter your password" />
+
+            <!-- Confirm Password -->
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required minlength="6" placeholder="Confirm your password" />
+
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email" />
+
+            <!-- Mobile Number -->
+            <label for="mobile">Mobile Number</label>
+            <input type="text" id="mobile" name="mobile" required pattern="\d{10}" placeholder="Enter 10-digit mobile number" />
+
+            <!-- Address -->
+            <label for="address">Address</label>
+            <textarea id="address" name="address" required placeholder="Enter your address"></textarea>
+
+            <!-- User Role -->
+            <label for="role">Select User Role</label>
+            <select id="role" name="role" required>
+                <option value="">--Select Role--</option>
+                <option value="admin">Admin</option>
+                <option value="registeredUser">Registered User</option>
+                <option value="guest">Guest</option>
+            </select>
+
+            <!-- Submit Button -->
+            <button type="submit" id="submit">Register</button>
+        </form>
+    </div>
+
+
+        <script> 
+            
+//            First name validation
+        document.getElementById('firstName').addEventListener('input', function (e) {
+                var name = document.getElementById('firstName').value;
+                var error = document.getElementById('name_arror');
+                console.log(name);
+                if (name[0]==name[0].toUpperCase() && name[0]!=" ")
+                {
+                    error.style.display = 'none';
+                    var sub=document.getElementById("submit");
+                    sub.setAttribute("type","submit");
+                } else
+                {
+                    var sub=document.getElementById("submit");
+                    sub.setAttribute("type","button");
+                    error.style.display = 'block';
+                }
+            });
+              document.getElementById('lastName').addEventListener('input', function (e) {
+                var name = document.getElementById('lastName').value;
+                var error = document.getElementById('lname_arror');
+                console.log(name);
+                if (name[0]==name[0].toUpperCase() && name[0]!=" ")
+                {
+                    error.style.display = 'none';
+                    var sub=document.getElementById("submit");
+                    sub.setAttribute("type","submit");
+                } else
+                {
+                    var sub=document.getElementById("submit");
+                    sub.setAttribute("type","button");
+                    error.style.display = 'block';
+                }
+            });
+        </script>
+    </body>
+</html>
