@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Operations</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding: 30px;
+        }
+        .form-container {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="text-center">Shoes shore <i class="bi bi-phone-flip  "></i></h2>
+
+    <!-- Search Bar (Form submission to search backend) -->
+    <div class="mb-2">
+        <form action="/search" method="GET">
+            <input type="text" name="search" class="form-control" placeholder="Search by Name..." />
+        </form>
+    </div>
+
+    <!-- Table to Display Records (this would be dynamically generated from the server) -->
+    <a href="#updateModal1" style="position: relative;left: 67.2rem;" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updateModal2">Add</a>
+    <table class="table table-bordered" id="recordsTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example rows: These should be dynamically rendered from your server-side script -->
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>johndoe@example.com</td>
+                <td>
+                    <!-- Trigger update modal -->
+                    <a href="#updateModal1" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#updateModal1">Edit</a>
+                    <form action="/delete" method="POST" style="display:inline;">
+                        <input type="hidden" name="id" value="1">
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <!-- More rows can be added here -->
+        </tbody>
+    </table>
+
+    <!-- Add Record Form (Submit to a server-side handler) -->
+</div>
+
+<!-- Modal for Update (without JavaScript) -->
+<!-- Example of update modal for a record with ID=1 -->
+<div class="modal fade" id="updateModal1" tabindex="-1" aria-labelledby="updateModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel1">Update Record</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form to Update Record -->
+                <form action="/update" method="POST">
+                    <input type="hidden" name="id" value="1">
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" value="John Doe" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateEmail" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" value="johndoe@example.com" >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="updateModal2" tabindex="-1" aria-labelledby="updateModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel1">Insert Record</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form to Update Record -->
+                <form action="/update" method="POST">
+                    <input type="hidden" name="id" value="1">
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Shoes Name</label>
+                        <input type="text" name="name" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label"> Brand</label>
+                        <input type="text" name="brand" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Size</label>
+                        <input type="text" name="size" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Color</label>
+                        <input type="text" name="color" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Price</label>
+                        <input type="text" name="price" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Quantity</label>
+                        <input type="text" name="qty" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Description</label>
+                        <input type="text" name="desc" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">image</label>
+                        <input type="file" name="image" class="form-control" value="" >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap JS & Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
