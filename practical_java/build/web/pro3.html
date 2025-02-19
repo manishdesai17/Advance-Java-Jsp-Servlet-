@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Registration form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="prog3.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Registration Form</h2>
+            <div id="error" style="color: #f62f2f;height: 35px;text-align: center;padding: 7px;font-weight: bold;border-radius: 5px;display: none">
+            </div>
+            <form action="prog3" method="POST" id="registrationForm">
+
+                <!-- First Name -->
+                <label for="firstName">First Name</label>
+                <input type="text" id="fname" name="fname"  placeholder="Enter your first name" />
+                <label style="color:red;display:none" id="name_arror" >please enter first character capital..</label>
+
+                <!-- Last Name -->
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lname" name="lname"  placeholder="Enter your last name" />
+                <label style="color:red;display:none" id="lname_arror" >please enter first character capital..</label>
+
+                <!-- Password -->
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"  placeholder="Enter your password" />
+
+                <!-- Confirm Password -->
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confPassword" name="confPassword"  placeholder="Confirm your password" />
+
+                <!-- Email -->
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email" />
+
+                <!-- Mobile Number -->
+                <label for="mobile">Mobile Number</label>
+                <input type="text" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" />
+
+                <!-- Address -->
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Enter your address"></textarea>
+
+                <!-- User Role -->
+                <label for="role">Select User Role</label>
+                <select id="role" name="role" >
+                    <option value="admin">Admin</option>
+                    <option value="registeredUser">Registered User</option>
+                    <option value="guest">Guest</option>
+                </select>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submit">Register</button>
+            </form>
+        </div>
+
+
+        <script>
+var error;
+//            First name validation
+//            document.getElementById('firstName').addEventListener('input', function (e) {
+//                var name = document.getElementById('firstName').value;
+//                var error = document.getElementById('name_arror');
+//                console.log(name);
+//                if (name[0] == name[0].toUpperCase() && name[0] != " ")
+//                {
+//                    error.style.display = 'none';
+//                    var sub = document.getElementById("submit");
+//                    sub.setAttribute("type", "submit");
+//                } else
+//                {
+//                    var sub = document.getElementById("submit");
+//                    sub.setAttribute("type", "button");
+//                    error.style.display = 'block';
+//                }
+//            });
+//            document.getElementById('lastName').addEventListener('input', function (e) {
+//                var name = document.getElementById('lastName').value;
+//                var error = document.getElementById('lname_arror');
+//                console.log(name);
+//                if (name[0] == name[0].toUpperCase() && name[0] != " ")
+//                {
+//                    error.style.display = 'none';
+//                    var sub = document.getElementById("submit");
+//                    sub.setAttribute("type", "submit");
+//                } else
+//                {
+//                    var sub = document.getElementById("submit");
+//                    sub.setAttribute("type", "button");
+//                    error.style.display = 'block';
+//                }
+//            });
+        </script>
+    </body>
+</html>

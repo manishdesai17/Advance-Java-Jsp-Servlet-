@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Login</title>
+        <style>
+            /* Basic Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .login-container {
+                background-color: white;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px black ;
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .login-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .form-group {
+                margin-bottom: 15px;
+            }
+
+            label {
+                font-size: 14px;
+                color: #333;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            input, select {
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                background-color: #f9f9f9;
+            }
+
+            input:focus, select:focus {
+                outline: none;
+                border-color: #0056b3;
+                background-color: #fff;
+            }
+
+            .btn-submit {
+                background-color: #0056b3;
+                color: white;
+                padding: 12px 0;
+                border: none;
+                border-radius: 4px;
+                width: 100%;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .btn-submit:hover {
+                background-color: #004494;
+            }
+
+            .form-footer {
+                text-align: center;
+                margin-top: 15px;
+            }
+
+            .form-footer a {
+                color: #0056b3;
+                text-decoration: none;
+            }
+
+            .form-footer a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="login-container" id="login" style="display: block">
+            <h2>Login</h2>
+            <form action="pro4" method="post">
+                <!-- Email Input -->
+                <div id="error" style="color: #f62f2f;height: 35px;text-align: center;padding: 7px;font-weight: bold;border-radius: 5px;display: none">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" >
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" >
+                </div>
+
+                <!-- User Role Dropdown -->
+                <div class="form-group">
+                    <label for="role">User Role</label>
+                    <select id="role" name="role" >
+                        <option value="admin">Admin</option>
+                        <option value="registeredUser">User</option>
+                        <option value="guest">Guest</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Login</button>
+            </form>
+
+            <div class="form-footer">
+                <p>Registration <a href="pro3.html">Click here</a></p>
+            </div>
+            <div class="form-footer">
+                <p>Go back <a href="pro4_home.html">Click here</a></p>
+            </div>
+        </div>
+        <script>
+            var error;
+            var login;
+        </script>
+    </body>
+</html>
