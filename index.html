@@ -20,7 +20,7 @@
 <body>
 
 <div class="container">
-    <h2 class="text-center">Shoes shore <i class="bi bi-phone-flip  "></i></h2>
+    <h2 class="text-center">Shoes store <i class="bi bi-shop"></i></h2>
 
     <!-- Search Bar (Form submission to search backend) -->
     <div class="mb-2">
@@ -76,12 +76,36 @@
                 <form action="/update" method="POST">
                     <input type="hidden" name="id" value="1">
                     <div class="mb-2">
-                        <label for="updateName" class="form-label">Name</label>
-                        <input type="text" name="name" class="form-control" value="John Doe" >
+                        <label for="updateName" class="form-label">Shoes Name</label>
+                        <input type="text" name="name" class="form-control" value="" >
                     </div>
                     <div class="mb-2">
-                        <label for="updateEmail" class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control" value="johndoe@example.com" >
+                        <label for="updateName" class="form-label"> Brand</label>
+                        <input type="text" name="brand" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Size</label>
+                        <input type="text" name="size" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Color</label>
+                        <input type="text" name="color" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Price</label>
+                        <input type="text" name="price" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Quantity</label>
+                        <input type="text" name="qty" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">Description</label>
+                        <input type="text" name="desc" class="form-control" value="" >
+                    </div>
+                    <div class="mb-2">
+                        <label for="updateName" class="form-label">image</label>
+                        <input type="file" name="image" class="form-control" value="" >
                     </div>
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
